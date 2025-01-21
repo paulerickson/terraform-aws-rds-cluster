@@ -326,6 +326,7 @@ resource "random_pet" "instance" {
     cluster_family = var.cluster_family
     instance_class = local.instance_class
   }
+  lifecycle { ignore_changes = [keepers] }
 }
 
 module "rds_identifier" {
